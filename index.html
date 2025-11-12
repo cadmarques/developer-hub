@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Foto e introdução -->
+    <header class="intro">
+      <img src="assets/cesar-photo-cv.jpg" alt="Foto de [Teu Nome]" class="profile-photo" />
+      <h1>Olá, eu sou César Marques</h1>
+      <p class="tagline">Engenheiro de Software com experiência de Gestão de Projetos e Equipes.</p>
+      <p class="tagline">Apaixonado por desafios, solucionar problemas e atingir objetivos.</p>
+    </header>
+
+    <!-- Projetos -->
+    <section class="projects">
+      <h2>Projetos em Destaque</h2>
+
+          <!-- Barra de pesquisa -->
+    <div class="search-box">
+        <label for="project-search" class="visually-hidden">Procurar projetos</label>
+        <input 
+        type="text" 
+        id="project-search" 
+        placeholder="Procurar por nome ou tecnologia..." 
+        aria-label="Procurar projetos"
+        />
+    </div>
+
+      <div class="cards">
+        
+        <!-- Card 1: Backend (Spring) -->
+        <a href="https://github.com/teu-username/spring-notification-service" class="card" target="_blank" rel="noopener">
+          <h3>Smart Notification Service</h3>
+          <p>Spring Boot • Strategy Pattern • SOLID</p>
+        </a>
+
+        <!-- Card 2: Frontend (Art Fair) -->
+        <a href="https://teu-username.github.io/art-fair/" class="card" target="_blank" rel="noopener">
+          <h3>Art Fair Website</h3>
+          <p>HTML • CSS • Acessibilidade</p>
+        </a>
+
+        <!-- Card 3: Outro projeto -->
+        <a href="https://github.com/teu-username/order-processing-system" class="card" target="_blank" rel="noopener">
+          <h3>Order Processing System</h3>
+          <p>Chain of Responsibility • Spring Events</p>
+        </a>
+
+        <!-- Adicionar projetos futuros -->
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

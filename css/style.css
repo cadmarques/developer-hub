@@ -1,0 +1,156 @@
+/* Variáveis de cor */
+:root {
+    --bg: #110731;
+    --text-light: #f0f4ff;
+    --card-bg: rgba(255, 255, 255, 0.06);
+    --card-hover: rgba(255, 255, 255, 0.12);
+    --primary: #009DFE;
+    --radius: 12px;
+    --spacing: 1.5rem;
+  }
+  
+  /* Reset e base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--spacing);
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Foto e introdução */
+  .intro {
+    text-align: center;
+    padding: 2rem 0 3rem;
+  }
+  
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .intro h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .tagline {
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Projetos */
+  .projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    color: var(--primary);
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card {
+    display: block;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text-light);
+    transition: background 0.3s ease;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .card:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+  }
+  
+  .card h3 {
+    margin-bottom: 0.6rem;
+    color: white;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    opacity: 0.75;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .intro h1 {
+      font-size: 1.7rem;
+    }
+  
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  /* Barra de pesquisa */
+.search-box {
+    margin: 0 auto 2rem;
+    max-width: 500px;
+  }
+  
+  #project-search {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    outline: 2px solid transparent;
+    transition: outline-color 0.3s;
+  }
+  
+  #project-search::placeholder {
+    color: rgba(240, 244, 255, 0.6);
+  }
+  
+  #project-search:focus {
+    outline-color: var(--primary);
+    background: rgba(255, 255, 255, 0.12);
+  }
+  
+  /* Classe utilitária para acessibilidade */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
