@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskManager - César Marques</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="intro">
+      <h1>TaskManager API</h1>
+      <p class="tagline">
+        Uma API REST para gestão de tarefas, construída com boas práticas de engenharia de software.
+      </p>
+    </header>
+
+    <section class="project-detail">
+      <h2>Tecnologias e Princípios</h2>
+      <p>
+        Desenvolvido com foco em manutenibilidade, testabilidade e clareza arquitetural.
+      </p>
+
+      <div class="tech-badges">
+        <span>Java 17</span>
+        <span>Spring Boot 3</span>
+        <span>SOLID</span>
+        <span>JUnit 5</span>
+        <span>Mockito</span>
+        <span>Swagger / OpenAPI</span>
+        <span>REST API</span>
+        <span>GlobalExceptionHandler</span>
+
+      </div>
+
+      <h2>Funcionalidades Principais</h2>
+      <ul>
+        <li>Criar, listar, atualizar e remover tarefas</li>
+        <li>Validação rigorosa de entrada (ex: título não vazio)</li>
+        <li>Tratamento global de exceções com `@ControllerAdvice`</li>
+        <li>Documentação interativa via Swagger UI (`/swagger-ui.html`)</li>
+        <li>Testes automatizados com JUnit 5 e Mockito para serviços e controladores</li>
+      </ul>
+
+      <h2>Tratamento Global de Exceções</h2>
+      <p>
+        Diagrama do fluxo de exceções não tratadas, capturadas pelo <code>GlobalExceptionHandler</code>.
+      </p>
+
+      <figure class="diagram-container">
+        <img 
+          src="assets/taskmandiag1.jpg" 
+          alt="Fluxo de exceções não tratadas com o GlobalExceptionHandler" 
+          loading="lazy"
+        />
+      </figure>
+
+      <h2>Código Fonte</h2>
+      <p>
+        O projeto está disponível no GitHub:
+        <a href="https://github.com/cadmarques/task-manager-api" target="_blank" rel="noopener">
+          github.com/cadmarques/task-manager-api
+        </a>
+      </p>
+
+      <a href="index.html" class="back-link">Back</a>
+    </section>
+  </main>
+
+  <style>
+    /* Estilos adicionais */
+    .project-detail {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-detail h2 {
+      color: #009DFE;
+      margin: 2rem 0 1rem;
+      font-size: 1.4rem;
+    }
+
+    .project-detail p, .project-detail ul {
+      margin-bottom: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.2rem 0;
+    }
+
+    .tech-badges span {
+      background: rgba(0, 157, 254, 0.12);
+      color: #009DFE;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #009DFE;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Garante que a lista fique bem estilizada */
+    .project-detail ul {
+      padding-left: 1.5rem;
+    }
+
+    .project-detail li {
+      margin-bottom: 0.6rem;
+    }
+  </style>
+</body>
+</html>
