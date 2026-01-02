@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order & Payment System - César Marques</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* === Slideshow (único CSS extra necessário) === */
+    .slideshow-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .slide { display: none; }
+    .slide img { width: 100%; height: auto; display: block; }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 6px 6px 0;
+      user-select: none;
+    }
+
+    .next { right: 0; border-radius: 6px 0 0 6px; }
+    .prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.9); }
+
+    .dots {
+      text-align: center;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active, .dot:hover { background-color: var(--primary); }
+
+    .fade { animation: fade 0.8s; }
+    @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+  </style>
+</head>
+<body class="project-detail-page">
+  <div class="container">
+    <header>
+      <h1>Order & Payment Processing System</h1>
+      <p>Simulação de ecossistema de microserviços com Spring Boot 3, Java 17 e boas práticas de backend.</p>
+    </header>
+
+    <div class="project-detail-container">
+
+      <div class="project-content">
+        <h2>Visão Geral</h2>
+        <p>
+          Este projeto demonstra um sistema de processamento de pedidos e pagamentos, simulando a interação entre dois bounded contexts:
+          <strong>Order</strong> e <strong>Payment</strong>.
+        </p>
+        <p>
+          Apesar de estar num único JAR, a arquitetura reflete como estes domínios seriam separados num ecossistema real de microserviços.
+        </p>
+
+        <h2>Tecnologias</h2>
+        <ul>
+          <li>Java 17</li>
+          <li>Spring Boot 3</li>
+          <li>Spring Web, Data JPA, Validation</li>
+          <li>H2 Database (in-memory)</li>
+          <li>JUnit 5, Mockito</li>
+          <li>Swagger / OpenAPI</li>
+          <li>Lombok (boas práticas)</li>
+        </ul>
+
+        <h2>Funcionalidades</h2>
+        <ul>
+          <li>Criação de pedidos com validação rigorosa</li>
+          <li>Processamento de pagamento simulado (70% sucesso, 30% falha)</li>
+          <li>Tratamento global de exceções com <code>@ControllerAdvice</code></li>
+          <li>Endpoints REST bem estruturados</li>
+          <li>Testes automatizados (unitários e de integração)</li>
+        </ul>
+
+        <h2>Documentação da API (Swagger UI)</h2>
+        <p>
+          A API inclui documentação interativa com OpenAPI/Swagger, permitindo testar endpoints diretamente do browser.
+        </p>
+
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+          <div class="slide fade"><img src="assets/opayswg1.jpg" alt="Swagger: OrderController endpoints"></div>
+          <div class="slide fade"><img src="assets/opayswg2.jpg" alt="Swagger: Resposta de erro 404"></div>
+          <div class="slide fade"><img src="assets/opayswg3.jpg" alt="Swagger: Resposta OK"></div>
+          <div class="slide fade"><img src="assets/opayswg4.jpg" alt="Swagger: Schemas"></div>
+
+          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+          <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+
+        <a href="https://github.com/cadmarques/order-payment-system" class="github-link" target="_blank" rel="noopener">
+          github.com/cadmarques/order-payment-system
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n); }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+</body>
+</html>
